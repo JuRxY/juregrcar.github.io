@@ -92,14 +92,13 @@ body {
 /* SCROLL DOWN EFFECT */
 
 .scroll {
-	width: 60px;
-	height: 60px;
-
-	position: relative;
-	animation: down 1.5s infinite;
-	-webkit-animation: down 1.5s infinite;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    animation: down 1.5s infinite;
+    -webkit-animation: down 1.5s infinite;
     top: 80%;
-    left: 48%;
+    left: 50%;
 } 
 
 @keyframes down {
@@ -218,9 +217,4 @@ a {
     .f_text {
         font-size: 2.6em;
     }
-
-    .scroll {
-        top: 80%;
-        left: 45%;
-    } 
 }
