@@ -91,39 +91,28 @@ body {
 
 /* SCROLL DOWN EFFECT */
 
-.scroll {
-    width: 50px;
-    height: 50px;
+.scroll_hint_container {
+    top: 85%;
     position: relative;
-    animation: down 1.5s infinite;
-    -webkit-animation: down 1.5s infinite;
-    top: 80%;
-    left: 49%;
+    text-align: center;
+}
+
+.scroll_hint {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+	width: 50px;
+	height: 50px;
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 30px;
 } 
 
-@keyframes down {
-	0% {
-		transform: translate(0);
-	}
-	20% {
-		transform: translateY(15px);
-	}
-	40% {
-		transform: translate(0);
-	}
+.scroll_image {
+    margin-top: 30px;
+    width: 50px;
+    height: 50px;
 }
 
-@-webkit-keyframes down {
-	0% {
-		transform: translate(0);
-	}
-	20% {
-		transform: translateY(15px);
-	}
-	40% {
-		transform: translate(0);
-	}
-}
 
 /* MAIN WEBSITE SECTION*/
 
@@ -217,8 +206,8 @@ a {
     .f_text {
         font-size: 2.6em;
     }
-	
-   .scroll {
+
+    .scroll {
         top: 80%;
         left: 41%;
     } 
