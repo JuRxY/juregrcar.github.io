@@ -24,37 +24,63 @@
     </div>
     <div class="main_website">
         <h3 class="title_text" id="info">Info</h3>
-        <p class="info">
-            Personal website of <span class="span_red">Jure Grcar</span>
-            <br>Currently 15 years old
-            <br>Attending school at <a href="https://www.vegova.si/">Vegova</a>
-        </p>
+            <p class="info">
+                Personal website of <span class="span_red">Jure Grcar</span>
+                <br>Currently 15 years old
+                <br>Attending school at <a href="https://www.vegova.si/">Vegova</a>
+            </p>
         <h3 class="title_text">Projects</h3>
-        <p class="text_website">
-            <span class="span_red">Pangolang</span><br>
-            A python based programming language. Pangolang files have a file extension named .pan
-            <br><a href="https://github.com/JuRxY/pengolang">Repo</a>
-        </p>
-        <p class="text_website">
-            <span class="span_red">Vrhnichan</span><br>
-            A simple website written in python with Flask. It uses the lpp.si api to predict bus arrivals to the selected station.
-            <br><a href="https://github.com/JuRxY/vrhnichan">Repo</a> | <a href="https://vrhnichan.juregrcar.repl.co/">Site</a>
-        </p>
-        <p class="text_website">
-            <span class="span_red">QR code generator</span><br>
-            A simple python script with a gui to make generating QR codes simple.
-            <br><a href="https://github.com/JuRxY/QRcodeGenerator/">Repo</a>
-        </p>
-        <p class="text_website">
-            <span class="span_red">Personal website</span><br>
-            The website you are viewing right now :D
-            <br><a href="https://github.com/JuRxY/personal/">Repo</a> | <a href="https://jurxy.github.io/personal/">Site</a>
-        </p>
-        <p class="text_website" style="margin-bottom: 210px;">
-            <span class="span_red">Vegova weather</span><br>
-            A simple webapp that tells the weather of a predefined geographic position using the https://open-meteo.com/ API.
-            <br><a href="https://github.com/JuRxY/weather">Repo</a> | <a href="https://jurxy.github.io/weather/">Site</a>
-        </p>
+            <p class="text_website">
+                <span class="span_red">Pangolang</span><br>
+                A python based programming language. Pangolang files have a file extension named .pan
+                <br><a href="https://github.com/JuRxY/pengolang">Repo</a>
+            </p>
+            <p class="text_website">
+                <span class="span_red">Vrhnichan</span><br>
+                A simple website written in python with Flask. It uses the lpp.si api to predict bus arrivals to the selected station.
+                <br><a href="https://github.com/JuRxY/vrhnichan">Repo</a> | <a href="https://vrhnichan.juregrcar.repl.co/">Site</a>
+            </p>
+            <p class="text_website">
+                <span class="span_red">QR code generator</span><br>
+                A simple python script with a gui to make generating QR codes simple.
+                <br><a href="https://github.com/JuRxY/QRcodeGenerator/">Repo</a>
+            </p>
+            <p class="text_website">
+                <span class="span_red">Personal website</span><br>
+                The website you are viewing right now :D
+                <br><a href="https://github.com/JuRxY/personal/">Repo</a> | <a href="https://jurxy.github.io/personal/">Site</a>
+            </p>
+            <p class="text_website">
+                <span class="span_red">Vegova weather</span><br>
+                A simple webapp that tells the weather of a predefined geographic position using the https://open-meteo.com/ API.
+                <br><a href="https://github.com/JuRxY/weather">Repo</a> | <a href="https://jurxy.github.io/weather/">Site</a>
+            </p>
+        <h3 class="title_text" style="margin-top: 40px;">Quote of your visit</h3>
+            <p class="info" style="margin-bottom: 210px;">
+                <span class="quote"></span><br>
+                <span class="author"></span>
+            </p>
     </div>
 </body>
+<script>
+    var quote = document.querySelector(".quote")
+    var author = document.querySelector(".author")
+    fetch('https://api.quotable.io/random')
+        .then(response => {
+            // Check the response status
+            if (response.status !== 200) {
+            throw new Error('Failed with HTTP error code: ' + response.status);
+            }
+            // Parse the response body as JSON
+            return response.json();
+        })
+        .then(data => {
+            // Do something with the data
+            quote.innerHTML = data["content"];
+            author.innerHTML = "\10\10-" + data["author"];
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+</script>
 </html>
