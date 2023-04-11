@@ -154,6 +154,12 @@ body {
     margin-right: 25%;
 }
 
+.info span.red {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--red);
+    font-size: 20px;
+}
+
 .text_website:hover {
     border: 1px solid var(--red);
 }

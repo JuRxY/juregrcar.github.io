@@ -25,9 +25,8 @@
     <div class="main_website">
         <h3 class="title_text" id="info">Info</h3>
             <p class="info">
-                Personal website of <span class="span_red">Jure Grcar</span>
-                <br>Currently 15 years old
-                <br>Attending school at <a href="https://www.vegova.si/">Vegova</a>
+                Currently <span class="red">15</span> years old
+                <br>Attending school at <a href="https://www.vegova.si/">Vegova</a> for <span class="days_left red">None</span> more days.
             </p>
         <h3 class="title_text">Projects</h3>
             <p class="text_website">
@@ -65,6 +64,15 @@
 <script>
     var quote = document.querySelector(".quote")
     var author = document.querySelector(".author")
+    var days = document.querySelector(".days_left")
+
+    // days
+    var date1 = new Date();
+    var date2 = new Date("06/25/2026");
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Math.ceil(Difference_In_Time / (1000 * 3600 * 24));
+    days.innerHTML = Difference_In_Days
+    
     fetch('https://api.quotable.io/random')
         .then(response => {
             // Check the response status
