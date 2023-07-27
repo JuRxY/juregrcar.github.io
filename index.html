@@ -25,7 +25,7 @@
     <div class="main_website">
         <h3 class="title_text" id="info">Info</h3>
             <p class="info">
-                Currently <span class="red">16</span> years old
+                Currently <span class="red age">NaN</span> years old
                 <br>Attending school at <a href="https://www.vegova.si/" target="_blank">Vegova</a> for <span class="days_left red">None</span> more days.
             </p>
         <h3 class="title_text">Projects</h3>
@@ -55,6 +55,8 @@
     var quote = document.querySelector(".quote")
     var author = document.querySelector(".author")
     var days = document.querySelector(".days_left")
+    var bd = document.querySelector(".age")
+    var bd_date = new Date("07/04/2007")
 
     // days
     var date1 = new Date();
@@ -80,5 +82,14 @@
         .catch(error => {
             console.error('Error:', error);
         });
+    
+    // birthday
+    function calculateAge(birthday) { // birthday is a date
+       var ageDifMs = Date.now() - birthday;
+       var ageDate = new Date(ageDifMs); // miliseconds from epoch
+       return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+    bd.innerHTML = calculateAge(bd_date)
 </script>
 </html>
